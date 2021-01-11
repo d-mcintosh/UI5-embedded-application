@@ -1,0 +1,77 @@
+<mvc:View controllerName="myParentApp.myParentApp.controller.View1" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<!--<IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">-->
+						<!--	<items>-->
+						<!--		<IconTabFilter icon="sap-icon://hint">-->
+						<!--			<Text text="Info content goes here ..."/>-->
+						<Table id="table" items="{viewModel/ProductCollection}" ariaLabelledBy="title">
+							<OverflowToolbar>
+								<Title id="title" text="Products"/>
+								<ToolbarSpacer/>
+								<Label text="SelectionMode:"/>
+								<Select id="select" selectedKey="MultiToggle" change="onSelectionModeChange">
+									<items>
+										<core:Item key="MultiToggle" text="MultiToggle"/>
+										<core:Item key="Single" text="Single"/>
+										<core:Item key="None" text="None"/>
+									</items>
+								</Select>
+								<ToggleButton text="Toggle Highlights" pressed="true" press="onHighlightToggle"/>
+								<ToggleButton text="Toggle Alternate Row Colors" press="onAlternateToggle"/>
+							</OverflowToolbar>
+							<columns>
+								<Column>
+									<Label text="Status"/>
+								</Column>
+								<Column>
+									<Label text="Product Name"/>
+								</Column>
+								<Column>
+									<Label text="Product Id"/>
+								</Column>
+								<Column hAlign="End">
+									<Label text="Quantity"/>
+								</Column>
+								<Column>
+									<Label text="Price"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem id="DirectImpactMaterialListItem" vAlign="Middle">
+									<cells>
+										<Text text="{viewModel/ProductCollection>Status}"/>
+										<Text text="{viewModel>Name}"/>
+										<Text text="{viewModel>ProductId}"/>
+										<Text text="{viewModel>Quantity}"/>
+										<Text text="{viewModel>Price}"/>
+									
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<!--		</IconTabFilter>-->
+						<!--		<IconTabFilter icon="sap-icon://attachment" count="3">-->
+						<!--			<Text text="Attachments go here ..."/>-->
+						<!--<core:ComponentContainer width="100%" name="myChildApp.myChildApp" component="myChildApp.myChildApp"/>-->
+						<!--			<core:ComponentContainer width="100%" name="com.merck.ppm.managechangesmanagechanges" component="com.merck.ppm.managechangesmanagechanges"/>-->
+						<!--		</IconTabFilter>-->
+						<!--		<IconTabFilter icon="sap-icon://notes" count="12">-->
+						<!--			<Text text="Notes go here ..."/>-->
+						<!--		</IconTabFilter>-->
+						<!--		<IconTabFilter icon="sap-icon://group">-->
+						<!--			<Text text="People content goes here ..."/>-->
+						<!--		</IconTabFilter>-->
+						<!--	</items>-->
+						<!--</IconTabBar>-->
+						<!--<Text text="Hello"/>-->
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
